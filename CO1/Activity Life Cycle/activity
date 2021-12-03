@@ -1,1 +1,122 @@
 
+//JAVA//
+
+
+package com.example.blocks;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+                Log.d("Activity lifecycle","onCreate(): called");
+            }
+            @Override
+            protected void onStart()
+            {
+                super.onStart();
+                Log.d("Activity Lifcecyle", "onStart: called");
+            }
+            @Override
+            protected void onResume()
+            {
+                super.onResume();
+                Log.d("Activity Lifecycle","onResume: called");
+            }
+            @Override
+            protected void onPause()
+            {
+                super.onPause();
+                Log.d("Activity Lifecycle","onPause: called");
+            }
+            @Override
+            protected void onStop()
+            {
+                super.onStop();
+                Log.d("Activity Lifecycle","onStop: called");
+            }
+            @Override
+            protected void onDestroy()
+            {
+                super.onDestroy();
+                Log.d("Activity Lifecycle","onDestroy: called");
+            }
+            @Override
+            protected void onRestart()
+            {
+                super.onRestart();
+                Log.d("Activity Lifecycle","onRestart: called");
+            }
+        }
+
+
+//XML//
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginRight="169dp"
+        android:layout_marginBottom="436dp"
+        android:background="#00A51B1B"
+        android:text="Building Blocks"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="82dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="199dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/t1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="171dp"
+        android:layout_marginLeft="171dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:layout_marginBottom="358dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

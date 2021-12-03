@@ -1,1 +1,217 @@
 
+//JAVA//
+
+package com.example.calc;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity
+{
+    EditText e1,e2,e3;
+    Button b1,b2,b3,b4,b5,b6;
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        e1=(EditText)findViewById(R.id.num1);
+        e2=(EditText)findViewById(R.id.num2);
+        e3=(EditText)findViewById(R.id.op);
+        b1=(Button)findViewById(R.id.add);
+        b2=(Button)findViewById(R.id.sub);
+        b3=(Button)findViewById(R.id.div);
+        b4=(Button)findViewById(R.id.multiply);
+        b5=(Button)findViewById(R.id.delete);
+
+
+    }
+    public void add(View view)
+    {
+        int n1=Integer.parseInt(e1.getText().toString());
+        int n2=Integer.parseInt(e2.getText().toString());
+        String n3=String.valueOf(n1+n2);
+        e3.setText(n3);
+
+    }
+    public void del(View view)
+    {
+        e1.setText("Enter number 1");
+        e2.setText("Enter number 2");
+        e3.setText("Output");
+    }
+    public void subtract(View view)
+    {
+        int n1=Integer.parseInt(e1.getText().toString());
+        int n2=Integer.parseInt(e2.getText().toString());
+        String n3=String.valueOf(n1-n2);
+        e3.setText(n3);
+    }
+    public void divide(View view)
+    {
+        int n1=Integer.parseInt(e1.getText().toString());
+        int n2=Integer.parseInt(e2.getText().toString());
+        String n3=String.valueOf(n1/n2);
+        e3.setText(n3);
+    }
+    public void multiply(View view)
+    {
+        int n1=Integer.parseInt(e1.getText().toString());
+        int n2=Integer.parseInt(e2.getText().toString());
+        String n3=String.valueOf(n1*n2);
+        e3.setText(n3);
+    }
+}
+
+
+//XML//
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="280dp"
+            android:layout_marginRight="280dp"
+            android:layout_marginBottom="383dp"
+            android:onClick="add"
+            android:text="add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="159dp"
+            android:layout_marginRight="159dp"
+            android:layout_marginBottom="383dp"
+            android:onClick="subtract"
+            android:text="sub"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/add"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="37dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginBottom="384dp"
+            android:onClick="divide"
+            android:text="div"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sub"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/mul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="69dp"
+            android:layout_marginLeft="69dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginBottom="303dp"
+            android:onClick="multiply"
+            android:text="mul"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="91dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="31dp"
+            android:layout_marginEnd="105dp"
+            android:layout_marginRight="105dp"
+            android:layout_marginBottom="304dp"
+            android:onClick="del"
+            android:text="clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mul"
+            app:layout_constraintTop_toBottomOf="@+id/sub" />
+
+        <EditText
+            android:id="@+id/num1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="59dp"
+            android:layout_marginEnd="104dp"
+            android:layout_marginRight="104dp"
+            android:layout_marginBottom="198dp"
+            android:ems="10"
+            android:hint="enter the number"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mul" />
+
+        <EditText
+            android:id="@+id/num2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="63dp"
+            android:layout_marginLeft="63dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="106dp"
+            android:layout_marginRight="106dp"
+            android:layout_marginBottom="139dp"
+            android:ems="10"
+            android:hint="enter the second"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num1" />
+
+        <EditText
+            android:id="@+id/op"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="105dp"
+            android:layout_marginRight="105dp"
+            android:layout_marginBottom="59dp"
+            android:ems="10"
+            android:hint="output"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

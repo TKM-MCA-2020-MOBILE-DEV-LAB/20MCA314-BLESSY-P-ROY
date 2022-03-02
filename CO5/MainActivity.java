@@ -1,5 +1,4 @@
 package com.example.sqliteapp;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
